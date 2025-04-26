@@ -120,8 +120,7 @@ export const projectsData = [
       {name: "mySQL", icon: mysqlicon},
     ],
     image: edreventos,
-    githuburl:
-      "https://github.com/AlpayC/Fullstack_Abschlussprojekt_SilentMoon",
+    githuburl:"https://github.com/dimaslopez2003/primeraApp.git",
     githubicon: FiGithub,
     colors: {
       main: "main-btn",
