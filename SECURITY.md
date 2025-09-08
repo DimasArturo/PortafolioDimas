@@ -1,9 +1,9 @@
-# Security Policy
+##Política de Seguridad
+##Reporte de Problemas de Seguridad
 
-## Reporting Security Issues
+Si consideras que has encontrado una vulnerabilidad de seguridad, te animamos a informarnos de inmediato.
 
-If you believe you have found a security vulnerability, we encourage you to let us know right away.
+Investigaremos todos los reportes legítimos y haremos todo lo posible por corregir el problema rápidamente.
 
-We will investigate all legitimate reports and do our best to quickly fix the problem.
-
-Email hello@alpaycelik.dev to disclose any security vulnerabilities.
+Envía un correo a montalcoarturo@gmail.com
+ para reportar cualquier vulnerabilidad de seguridad.
