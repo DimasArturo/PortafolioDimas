@@ -1,20 +1,16 @@
-import adobexdicon from "../../assets/icons/adobexdicon.svg";
 import adobeillustratoricon from "../../assets/icons/ilustratoricon.svg";
 import figmaicon from "../../assets/icons/figmaicon.svg";
 import htmlicon from "../../assets/icons/htmlicon.svg";
 import cssicon from "../../assets/icons/cssicon.svg";
 import bootstrapicon from "../../assets/icons/bootstrapicon.svg";
-import materialuiicon from "../../assets/icons/materialui.svg";
 import javascripticon from "../../assets/icons/javascripticon.svg";
 import typescripticon from "../../assets/icons/typescripticon.svg";
-import net from "../../assets/icons/neticon.svg";
 import reacticon from "../../assets/icons/reacticon.svg";
 import nextjsicon from "../../assets/icons/nextjsicon.svg";
 import reactnativeicon from "../../assets/icons/reactnative.svg";
 import ionicicon from "../../assets/icons/ionicicon.svg";
 import kotlinicon from "../../assets/icons/kotlinicon.svg";
 import googlemapsicon from "../../assets/icons/maps.svg";
-import csharpicon from "../../assets/icons/csharpicon.svg";
 import angularicon from "../../assets/icons/angularicon.svg";
 import laravelicon from "../../assets/icons/laravelicon.svg";
 import nodejsicon from "../../assets/icons/nodeicon.svg";
@@ -26,7 +22,6 @@ import firebaseicon from "../../assets/icons/firebaseicon.svg";
 import postmanicon from "../../assets/icons/postmanicon.svg";
 import awsicon from "../../assets/icons/awsicon.svg";
 import expressicon from "../../assets/icons/expressicon.svg";
-import sassscssicon from "../../assets/icons/sassicon.svg";
 import trelloicon from "../../assets/icons/trelloicon.svg";
 import apiicon from "../../assets/icons/apiicon.svg";
 import lottiefilesicon from "../../assets/icons/lottiefiles.svg";
@@ -34,7 +29,7 @@ import jetpackcomposeicon from "../../assets/icons/DeviconJetpackcompose.svg";
 import workcheckapp from "../../assets/img/workcheckapp.jpeg";
 import edreventos from "../../assets/img/edr.svg";
 import crmsaom from "../../assets/img/crm.svg";
-import profilepicture from "../img/yo.jpg";
+import profilepicture from "../img/dimaslopez.png";
 import caricon from "../../assets/icons/car-icon.svg";
 import travelicon from "../../assets/icons/travel-icon.svg";
 import hardwareicon from "../../assets/icons/hardware-icon.svg";
@@ -190,18 +185,6 @@ export const skillsDataWeb = [
         color: "#007ACC",
       },
       {
-        title: "C#",
-        hash: "#C#",
-        icon: csharpicon,
-        color: "#9B4F96",
-      },
-      {
-        title: ".net",
-        hash: "#.NET",
-        icon: net ,
-        color: "#9B4F96",
-      },
-      {
         title: "React",
         hash: "#React",
         icon: reacticon,
@@ -245,24 +228,6 @@ export const skillsDataWeb = [
         color: "#38B2AC",
       },
       {
-        title: "SASS/SCSS",
-        hash: "#SASS/SCSS",
-        icon: sassscssicon,
-        color: "#CC6699",
-      },
-      {
-        title: "BOOTSTRAP",
-        hash: "#BOOTSTRAP",
-        icon: bootstrapicon,
-        color: "#c61bfd",
-      },
-      {
-        title: "Material UI",
-        hash: "#Material UI",
-        icon: materialuiicon,
-        color: "#1e9ff9",
-      },
-      {
         title: "MongoDB",
         hash: "#MongoDB",
         icon: mongodbicon,
@@ -301,7 +266,6 @@ export const skillsDataDesign = [
     skillsTitle: "Design",
     skills: [
       { title: "Figma", hash: "#Figma", icon: figmaicon, color: "#F24E1E" },
-      {title: "Adobe XD", hash: "#Adobe XD",icon: adobexdicon, color: "#FF61F6",},
       { title: "Adobe Ilustrator", hash: "#Adobe Ilustrator", icon:adobeillustratoricon , color: "#fd9a1b" },
     ],
   },
@@ -370,12 +334,6 @@ export const sideBarLeftSocials = [
 ] as const;
 
 export const quotesData = [
-  {
-    es: '"Si lo puedes imaginar, lo puedes programar"',
-    en: `"Everything you can imagine, you can program."`,
-    author: "Alejandro Taboada Sánchez",
-    year: "1997-2019",
-  },
   {
     es: '"Portafolio de proyectos"',
     en: `"Portfolio of projects"`,
