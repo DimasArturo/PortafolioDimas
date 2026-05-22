@@ -1,4 +1,3 @@
-import bannerBg from "../assets/img/bannerbg.webp";
 import React, { useRef } from "react";
 import Button from "./Button";
 import { projectsData } from "../assets/lib/data";
@@ -9,89 +8,102 @@ import { Tooltip as ReactTooltip } from "react-tooltip";
 import { useSectionInView } from "../assets/lib/hooks";
 import { useLanguage } from "../context/language-context";
 import { motion, useScroll, useTransform } from "framer-motion";
+
 import "react-toastify/dist/ReactToastify.css";
 import "swiper/css";
 import "swiper/css/effect-cards";
 import "swiper/css/pagination";
 
 const ProjectSlider: React.FC = () => {
-  // Hook para detectar si la sección está en vista
   const { ref } = useSectionInView("Projects");
-
-  // Obtiene el idioma actual (ES o EN)
   const { language } = useLanguage();
 
-  // Referencia para animaciones
   const animationReference = useRef<HTMLDivElement>(null);
 
-  // Animaciones de scroll con Framer Motion
   const { scrollYProgress } = useScroll({
     target: animationReference,
-    offset: ["1 1", "1.3 1"],
+    offset: ["0.8 1", "1 1"],
   });
-  const scaleProgess = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
-  const opacityProgess = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
 
+  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.9, 1]);
+
+  const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.5, 1]);
 
   return (
-    <React.Fragment>
-      {/* Sección principal */}
+    <>
       <section
-        className="skill-banner relative overflow-x-clip h-100% w-full flex flex-col gap-2"
+        className="
+          relative
+          w-full
+          overflow-hidden
+          py-16
+          md:py-24
+        "
         id="projects"
         ref={ref}
       >
-        {/* Contenedor de notificaciones */}
+        {/* TOAST */}
         <ToastContainer
-          className="w-max text-3xl block p-3"
+          className="w-max text-base md:text-lg p-3"
           position="bottom-center"
           autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
           theme="light"
         />
 
-        {/* Fondo y título */}
+        {/* HEADER */}
         <div
-          className="quote-outer-container bg-[--darkblue] -rotate-3 flex justify-center items-center scale-110 pt-32 pb-32 max-lg:pt-16 max-lg:pb-16 max-lg:-ml-44 max-lg:-mr-44 max-lg:scale-100"
-          style={{
-            backgroundImage: `url(${bannerBg})`,
-            backgroundPosition: "center",
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-          }}
+          className="
+            flex flex-col
+            items-center
+            gap-10
+            md:gap-16
+          "
         >
-          <div className="title-container flex flex-col gap-6 mb-24 rotate-3 justify-between items-center max-lg:w-[100vw]">
-            <motion.div
-              ref={animationReference}
-              style={{
-                scale: scaleProgess,
-                opacity: opacityProgess,
-                textAlign: "center",
-              }}
+          <motion.div
+            ref={animationReference}
+            style={{
+              scale: scaleProgress,
+              opacity: opacityProgress,
+            }}
+            className="text-center px-4"
+          >
+            <p
+              className="
+                text-[--white]
+                text-2xl
+                sm:text-3xl
+                md:text-4xl
+                font-bold
+                mb-4
+              "
             >
-              {/* Título */}
-              <p className="text-[--white] mt-16 mb-6">
-                <span className="text-[--verdementa]">&lt;</span>
-                {language === "ES" ? "Proyectos" : "Projects"}
-                <span className="text-[--verdementa]">/&gt;</span>
-              </p>
-              <h2 className="text-[--white] mb-16">
-                {language === "ES" ? "Mis proyectos" : "My Projects"}
-              </h2>
-            </motion.div>
+              <span className="text-[--verdementa]">&lt;</span>
 
-            {/* Slider de proyectos */}
+              {language === "ES" ? "Proyectos" : "Projects"}
+
+              <span className="text-[--verdementa]">/&gt;</span>
+            </p>
+
+            <h2
+              className="
+                text-[--white]
+                text-4xl
+                sm:text-5xl
+                md:text-6xl
+                font-black
+              "
+            >
+              {language === "ES" ? "Mis proyectos" : "My Projects"}
+            </h2>
+          </motion.div>
+
+          {/* DESKTOP SLIDER */}
+          <div className="hidden lg:flex justify-center w-full px-6">
             <Swiper
               effect={"cards"}
               grabCursor={true}
               modules={[EffectCards, Autoplay, Pagination]}
-              className="w-[60vw] max-lg:hidden min-[1921px]:px-96"
+              className="w-full max-w-[1100px]"
               loop={true}
               autoplay={{
                 delay: 4000,
@@ -102,40 +114,162 @@ const ProjectSlider: React.FC = () => {
                 clickable: true,
               }}
             >
-              {projectsData.map((project, index: number) => (
+              {projectsData.map((project, index) => (
                 <SwiperSlide
                   key={index}
-                  className="quote-outer-container bg-[--darkblue] text-[--white] flex flex-row justify-between rounded-2xl p-20 text-left max-lg:hidden"
+                  className="
+                    bg-[--darkblue]
+                    text-[--white]
+                    rounded-3xl
+                    p-10
+                    xl:p-14
+                  "
                 >
-                  {/* Contenido izquierdo */}
-                  <div className="w-[55%] flex flex-col gap-12 justify-between">
-                    <h2>{project.title}</h2>
-                    <p className="text-white">
+                  <div className="flex gap-10 h-full">
+                    {/* LEFT */}
+                    <div className="w-[55%] flex flex-col justify-between gap-8">
+                      <div className="space-y-6">
+                        <h2 className="text-4xl font-bold">{project.title}</h2>
+
+                        <p className="text-lg leading-relaxed">
+                          {language === "ES"
+                            ? project.description
+                            : project.description_EN}
+                        </p>
+                      </div>
+
+                      {/* TECHNOLOGIES */}
+                      <div>
+                        <h3 className="text-2xl font-semibold mb-6">
+                          {language === "ES" ? "Tecnologías" : "Technologies"}
+                        </h3>
+
+                        <div className="grid grid-cols-5 gap-6">
+                          {project.technologies.map(
+                            (technology, innerIndex) => (
+                              <div
+                                key={innerIndex}
+                                className="flex justify-center"
+                              >
+                                <img
+                                  src={technology.icon}
+                                  alt={technology.name}
+                                  className="h-16 object-contain"
+                                  data-tooltip-id="my-tooltip"
+                                  data-tooltip-content={technology.name}
+                                />
+                              </div>
+                            ),
+                          )}
+                        </div>
+                      </div>
+
+                      {/* BUTTONS */}
+                      <div className="flex gap-6">
+                        <Button
+                          label="Github Repository"
+                          link={project.githuburl}
+                          iconSVG={project.githubicon}
+                          buttoncolor={project.colors.main}
+                          iconcolor={project.colors.icon}
+                        />
+                      </div>
+                    </div>
+
+                    {/* RIGHT */}
+                    <div
+                      className="
+                        relative
+                        w-[45%]
+                        h-[40rem]
+                        overflow-hidden
+                        rounded-2xl
+                        shadow-2xl
+                      "
+                    >
+                      <img
+                        src={project.image}
+                        alt={`${project.title}-project`}
+                        className="
+                          w-full
+                          transition-all
+                          duration-[6000ms]
+                          hover:-translate-y-1/2
+                        "
+                      />
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+
+          {/* MOBILE / TABLET */}
+          {/* MOBILE / TABLET SWIPER */}
+          <div className="lg:hidden w-full px-4 sm:px-6">
+            <Swiper
+              slidesPerView={1}
+              spaceBetween={24}
+              modules={[Pagination, Autoplay]}
+              loop
+              autoplay={{
+                delay: 4000,
+                disableOnInteraction: false,
+              }}
+              pagination={{
+                clickable: true,
+              }}
+              className="w-full pb-14"
+            >
+              {projectsData.map((project, index) => (
+                <SwiperSlide key={index}>
+                  <article className="bg-[--darkblue] border-[0.3rem] border-[--lightblue] rounded-3xl p-5 sm:p-8 flex flex-col gap-6 min-h-full">
+                    <h2 className="text-white text-2xl sm:text-3xl font-bold">
+                      {project.title}
+                    </h2>
+                    <img src={project.image} alt={project.title} className="w-full h-[240px] sm:h-[320px] object-cover object-top rounded-2xl"/>
+                    <p className="
+              text-white
+              text-base
+              sm:text-lg
+              leading-relaxed
+            "
+                    >
                       {language === "ES"
                         ? project.description
                         : project.description_EN}
                     </p>
-                    <div className="technologies">
-                      <h3>
+
+                    {/* TECHNOLOGIES */}
+                    <div>
+                      <h3
+                        className="
+                text-white
+                text-xl
+                font-semibold
+                mb-4
+              "
+                      >
                         {language === "ES" ? "Tecnologías" : "Technologies"}
                       </h3>
-                      <div className="grid grid-cols-6 gap-10 p-4">
-                        {project.technologies.map(
-                          (technology, innerIndex: number) => (
+
+                      <div className="grid grid-cols-3 sm:grid-cols-4 gap-6">
+                        {project.technologies.map((technology, innerIndex) => (
+                          <div key={innerIndex} className="flex justify-center">
                             <img
-                              key={innerIndex}
                               src={technology.icon}
-                              alt={`${project.title}-icon`}
-                              className="h-[5rem] w-[60%]"
+                              alt={technology.name}
+                              className="h-14 object-contain"
                               data-tooltip-id="my-tooltip"
                               data-tooltip-content={technology.name}
                             />
-                          )
-                        )}
+                          </div>
+                        ))}
                       </div>
                     </div>
-                    <div className="buttons flex gap-10">
 
+                    {/* BUTTON */}
+                    <div className="flex flex-col justify-center sm:flex-row gap-4">
                       <Button
                         label="Github Repository"
                         link={project.githuburl}
@@ -144,81 +278,24 @@ const ProjectSlider: React.FC = () => {
                         iconcolor={project.colors.icon}
                       />
                     </div>
-                  </div>
-
-                  {/* Contenido derecho */}
-                  <div className="right-content relative h-[40rem] overflow-hidden rounded-xl w-[40%] transition-all duration-200 shadow-2xl">
-                    <img
-                      src={project.image}
-                      alt={`${project.title}-project-mockup`}
-                      className="w-full h-auto transition-all duration-[6000ms] transform opacity-100 hover:translate-y-[-50%]"
-                    />
-                  </div>
+                  </article>
                 </SwiperSlide>
               ))}
             </Swiper>
-
-            {/* Proyectos en vista móvil */}
-            {projectsData.map((project, index: number) => (
-              <article
-                key={index}
-                className="bg-darkblue flex flex-col gap-10 w-[80%] h-full border-lightblue border-[0.4rem] p-8 rounded-xl mb-10 min-[1024px]:hidden max-lg:w-[90%]"
-              >
-                <h2 className="text-white">{project.title}</h2>
-                <img
-                  src={project.image}
-                  alt={project.image}
-                  className="h-[35vh] w-full object-cover object-top rounded-3xl"
-                />
-                <div className="buttons flex gap-10 max-lg:flex-col">
-                  <Button
-                    label="Github Repository"
-                    link={project.githuburl}
-                    iconSVG={project.githubicon}
-                    buttoncolor={project.colors.main}
-                    iconcolor={project.colors.icon}
-                  />
-                </div>
-                <p className="text-white max-lg:text-4xl">
-                  {language === "ES"
-                    ? project.description
-                    : project.description_EN}
-                </p>
-                <div className="technologies">
-                  <h3 className="text-white">
-                    {language === "ES" ? "Tecnologías" : "Technologies"}
-                  </h3>
-                  <div className="grid grid-cols-3 gap-10 p-4">
-                    {project.technologies.map(
-                      (technology, innerIndex: number) => (
-                        <img
-                          key={innerIndex}
-                          src={technology.icon}
-                          alt={`${project.title}-icon`}
-                          className="h-[5rem] w-[60%]"
-                          data-tooltip-id="my-tooltip"
-                          data-tooltip-content={technology.name}
-                        />
-                      )
-                    )}
-                  </div>
-                </div>
-              </article>
-            ))}
           </div>
         </div>
       </section>
 
-      {/* Tooltip para tecnologías */}
+      {/* TOOLTIP */}
       <ReactTooltip
         place="top"
         id="my-tooltip"
         style={{
-          fontSize: "1.5rem",
+          fontSize: "1rem",
           backgroundColor: "var(--verdementa)",
         }}
       />
-    </React.Fragment>
+    </>
   );
 };
 

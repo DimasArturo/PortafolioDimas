@@ -1,15 +1,10 @@
 import React, { useRef } from "react";
 import { Tooltip as ReactTooltip } from "react-tooltip";
 import { useSectionInView } from "../assets/lib/hooks";
-import {
-  skillsDataMobile,
-  skillsDataDesign,
-  skillsDataWeb,
-} from "../assets/lib/data";
+import { skillsDataWeb } from "../assets/lib/data";
 import { useTheme } from "../context/theme-context";
 import { useLanguage } from "../context/language-context";
 import SkillSection from "./SkillSection";
-import RadialGradient from "./RadialGradient";
 import { navLinks } from "../assets/lib/data";
 import { motion, useScroll, useTransform } from "framer-motion";
 
@@ -42,15 +37,8 @@ const TechStack: React.FC = () => {
         id="skills" // Identificador único para la sección
         ref={ref} // Referencia para detectar si está en vista
       >
-        {/* Gradiente de fondo */}
-        <RadialGradient
-          scale="scale-y-[3]"
-          opacity={theme === "light" ? "opacity-30" : "opacity-30"}
-          position="top-[55rem]"
-        />
-
         {/* Contenedor del título */}
-        <div className="title-container flex flex-col justify-center items-center p-32 w-1/2 gap-6 min-[1921px]:px-[55rem] max-lg:p-0 max-lg:w-full max-lg:items-start max-lg:py-16">
+        <div className="title-container flex flex-col justify-center items-center p-64 w-fit gap-6 min-[1921px]:px-[55rem] max-lg:p-0 max-lg:w-full max-lg:items-start max-lg:py-16">
           <motion.div
             ref={animationReference} // Referencia para animaciones
             style={{
@@ -61,7 +49,8 @@ const TechStack: React.FC = () => {
             {/* Título de la sección */}
             <p className="font-black mb-6">
               <span className="text-[--verdementa]">&lt;</span>
-              {language === "ES" ? navLinks[1].es : navLinks[1].en} {/* Cambia dinámicamente según el idioma */}
+              {language === "ES" ? navLinks[1].es : navLinks[1].en}{" "}
+              {/* Cambia dinámicamente según el idioma */}
               <span className="text-[--verdementa]">/&gt;</span>
             </p>
             <h2>
@@ -73,16 +62,9 @@ const TechStack: React.FC = () => {
         </div>
 
         {/* Contenedor de las secciones de habilidades */}
-        <div className="flex gap-40 justify-center max-lg:flex-col">
-          {/* Sección de habilidades web */}
+        <div className="flex justify-center">
           <div className="w-1/3 max-lg:w-full">
             <SkillSection skillsData={skillsDataWeb} theme={theme} />
-          </div>
-
-          {/* Secciones de habilidades de diseño y móviles */}
-          <div className="flex flex-col h-[inherit] justify-around max-lg:gap-40">
-            <SkillSection skillsData={skillsDataDesign} theme={theme} />
-            <SkillSection skillsData={skillsDataMobile} theme={theme} />
           </div>
         </div>
       </section>

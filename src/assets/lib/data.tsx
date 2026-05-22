@@ -7,24 +7,16 @@ import javascripticon from "../../assets/icons/javascripticon.svg";
 import typescripticon from "../../assets/icons/typescripticon.svg";
 import reacticon from "../../assets/icons/reacticon.svg";
 import nextjsicon from "../../assets/icons/nextjsicon.svg";
-import reactnativeicon from "../../assets/icons/reactnative.svg";
-import ionicicon from "../../assets/icons/ionicicon.svg";
 import kotlinicon from "../../assets/icons/kotlinicon.svg";
 import googlemapsicon from "../../assets/icons/maps.svg";
 import angularicon from "../../assets/icons/angularicon.svg";
 import laravelicon from "../../assets/icons/laravelicon.svg";
-import nodejsicon from "../../assets/icons/nodeicon.svg";
 import viteicon from "../../assets/icons/viteicon.svg";
 import tailwindcssicon from "../../assets/icons/tailwindicon.svg";
-import mongodbicon from "../../assets/icons/mongoicon.svg";
 import mysqlicon from "../../assets/icons/mysql.svg";
 import firebaseicon from "../../assets/icons/firebaseicon.svg";
 import postmanicon from "../../assets/icons/postmanicon.svg";
 import awsicon from "../../assets/icons/awsicon.svg";
-import expressicon from "../../assets/icons/expressicon.svg";
-import trelloicon from "../../assets/icons/trelloicon.svg";
-import apiicon from "../../assets/icons/apiicon.svg";
-import lottiefilesicon from "../../assets/icons/lottiefiles.svg";
 import jetpackcomposeicon from "../../assets/icons/DeviconJetpackcompose.svg";
 import workcheckapp from "../../assets/img/workcheckapp.jpeg";
 import edreventos from "../../assets/img/edr.svg";
@@ -34,7 +26,6 @@ import caricon from "../../assets/icons/car-icon.svg";
 import travelicon from "../../assets/icons/travel-icon.svg";
 import hardwareicon from "../../assets/icons/hardware-icon.svg";
 import nextjsiconwhite from "../../assets/icons/nextjsiconwhite.svg";
-import expressiconwhite from "../../assets/icons/expressiconwhite.svg";
 import { GoHome, GoPerson, GoMail, GoStack, GoProject } from "react-icons/go";
 import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 
@@ -43,10 +34,10 @@ export const headerIntroData = {
     es: "Hola, soy Dimas Lopez",
     en: "Hi, I'm Dimas Lopez",
   },
-  subtitle: "Fullstack Developer ",
+  subtitle: "Software Engineer",
   description: {
-    es: "Como recién egresado de la Universidad Tecnológica de Cancún en Ingeniería en Desarrollo y Gestión del Software, soy un apasionado de las TIC con iniciativa para ofrecer soluciones tecnológicas. Me motiva el aprendizaje continuo y la innovación, siempre buscando aplicar mis conocimientos en proyectos que generen un impacto positivo.",
-    en: "As a recent graduate of the Technological University of Cancun with a degree in Software Development and Management Engineering, I am passionate about ICT and driven to offer technological solutions. I am motivated by continuous learning and innovation, always seeking to apply my knowledge to projects that generate a positive impact.",
+    es: "Como ingeniero de software, con iniciativa para ofrecer soluciones tecnológicas. Me motiva el aprendizaje continuo y la innovación, siempre buscando aplicar mis conocimientos en proyectos que generen un impacto positivo.",
+    en: "As a software engineer, I am proactive in providing technological solutions. I am motivated by continuous learning and innovation, always seeking to apply my knowledge in projects that generate a positive impact.",
   },
   buttons: [
     {
@@ -79,15 +70,11 @@ export const projectsData = [
     description_EN:
       "A native mobile app made with Kotlin and Jetpack Compose. The app allows you to register employee check-ins and check-outs, and the Google Maps API was implemented to see from which location employees check in. The app is connected to a Firebase database and the MVVM model is applied.",
     technologies: [
-      { name: "REST Api", icon: apiicon },
-      { name: "Figma", icon: figmaicon },
-      { name: "lottiefiles", icon: lottiefilesicon },
       { name: "Kotlin", icon: kotlinicon },
       { name: "Jetpack Compose", icon: jetpackcomposeicon },
       { name: "Firebase", icon: firebaseicon },
       { name: "Google Maps API", icon: googlemapsicon },
       { name: "Postman", icon: postmanicon },
-      { name: "Trello", icon: trelloicon },
     ],
     image: workcheckapp,
     githuburl: "https://github.com/dimaslopez2003/CheckWork.git",
@@ -106,8 +93,6 @@ export const projectsData = [
     description_EN:
       "A web event management system for the dorado royale hotel, which allows users to create, edit, delete and generate reports of the hotel's events. It is made in Laravel and bootstrap for styles.",
     technologies: [
-      { name: "Html", icon: htmlicon },
-      { name: "CSS", icon: cssicon },
       { name: "JavaScript", icon: javascripticon },
       { name: "Laravel", icon: laravelicon },
       { name: "Bootstrap", icon: bootstrapicon },
@@ -131,17 +116,12 @@ export const projectsData = [
     description_EN:
       "CRM system for Grupo SAOM using technologies such as MySQL, Node.js and Angular, integrating WhatsApp as the main communication channel and a virtual agent with artificial intelligence. This system allows to optimize the management of conversations with customers, reducing response times and improving efficiency in the attention of queries",
     technologies: [
-      { name: "Html", icon: htmlicon },
-      { name: "CSS", icon: cssicon },
       { name: "Typescript", icon: typescripticon },
       { name: "Angular", icon: angularicon },
       {name: "Tailwind", icon: tailwindcssicon},
-      { name: "Node.js", icon: nodejsicon },
       { name: "MySQL", icon: mysqlicon },
       { name: "Postman", icon: postmanicon },
-      { name: "Node.js", icon: nodejsicon },
       {name: "AWS", icon: awsicon},
-      { name: "Figma", icon: figmaicon },
     ],
     image: crmsaom,
     githuburl: "https://github.com/Develop-SISEC/crm-saom-front.git",
@@ -196,24 +176,11 @@ export const skillsDataWeb = [
         icon: [nextjsicon, nextjsiconwhite],
         color: ["#000000", "#FFFFFF"],
       },
-
-      {
-        title: "Angular",
-        hash: "#Angular",
-        icon: [angularicon],
-        color: ["#de1a1a"],
-      },
       {
         title: "Laravel",
         hash: "#Laravel",
         icon: [laravelicon],
         color: ["#de1a1a"],
-      },
-      {
-        title: "Node.js",
-        hash: "#Node.js",
-        icon: nodejsicon,
-        color: "#339933",
       },
       {
         title: "Vite",
@@ -228,34 +195,10 @@ export const skillsDataWeb = [
         color: "#38B2AC",
       },
       {
-        title: "MongoDB",
-        hash: "#MongoDB",
-        icon: mongodbicon,
-        color: "#449C45",
-      },
-      {
-        title: "MySQL",
-        hash: "#MySQL",
-        icon: mysqlicon,
-        color: "#4FC08D",
-      },
-      {
-        title: "Firebase",
-        hash: "#Firebase",
-        icon: [firebaseicon],
-        color: ["#f6a71d"],
-      },
-      {
-        title: "Postman", // cambiar
+        title: "Postman",
         hash: "#Postman",
         icon: postmanicon,
         color: "#fc471e",
-      },
-      {
-        title: "Express", // cambiar
-        hash: "#Express",
-        icon: [expressicon, expressiconwhite],
-        color: ["#000000", "#FFFFFF"],
       },
     ],
   },
@@ -271,37 +214,10 @@ export const skillsDataDesign = [
   },
 ] as const;
 
-export const skillsDataMobile = [
-  {
-    skillsTitle: "MobileDevelopment",
-    skills: [
-      {
-        title: "ReactNative",
-        hash: "#ReactNative",
-        icon: reactnativeicon,
-        color: "#21759B",
-      },
-      {
-        title: "Ionic",
-        hash: "#Ionic",
-        icon: ionicicon,
-        color: "#0b81d8",
-      },
-      {
-        title: "Kotlin",
-        hash: "#Kotlin",
-        icon: kotlinicon,
-        color: "#fd9a1b",
-      },
-    ],
-  },
-] as const;
-
 export const navLinks = [
   { es: "Inicio", en: "Home", hash: "#home", icon: GoHome },
   { es: "Habilidades", en: "Skills", hash: "#skills", icon: GoStack },
   { es: "Proyectos", en: "Projects", hash: "#projects", icon: GoProject },
-  { es: "Sobre mi", en: "About me", hash: "#about-me", icon: GoPerson },
   { es: "Contacto", en: "Contact", hash: "#contact", icon: GoMail },
 ] as const;
 
