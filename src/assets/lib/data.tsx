@@ -26,7 +26,7 @@ import caricon from "../../assets/icons/car-icon.svg";
 import travelicon from "../../assets/icons/travel-icon.svg";
 import hardwareicon from "../../assets/icons/hardware-icon.svg";
 import nextjsiconwhite from "../../assets/icons/nextjsiconwhite.svg";
-import { GoHome, GoPerson, GoMail, GoStack, GoProject } from "react-icons/go";
+import { GoHome, GoMail, GoStack, GoProject } from "react-icons/go";
 import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 
 export const headerIntroData = {
