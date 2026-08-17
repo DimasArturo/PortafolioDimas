@@ -18,7 +18,7 @@ const Home: React.FC = () => {
     <>
       <Layout>
         <ThemeSwitch />
-        <header className="h-screen">
+        <header className="h-auto">
           <ScrollProgress
             position={"left"}
             color={"orange"}

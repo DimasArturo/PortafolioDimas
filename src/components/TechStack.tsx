@@ -37,34 +37,36 @@ const TechStack: React.FC = () => {
         id="skills" // Identificador único para la sección
         ref={ref} // Referencia para detectar si está en vista
       >
-        {/* Contenedor del título */}
-        <div className="title-container flex flex-col justify-center items-center p-64 w-fit gap-6 min-[1921px]:px-[55rem] max-lg:p-0 max-lg:w-full max-lg:items-start max-lg:py-16">
-          <motion.div
-            ref={animationReference} // Referencia para animaciones
-            style={{
-              scale: scaleProgess, // Escala animada
-              opacity: opacityProgess, // Opacidad animada
-            }}
-          >
-            {/* Título de la sección */}
-            <p className="font-black mb-6">
-              <span className="text-[--verdementa]">&lt;</span>
-              {language === "ES" ? navLinks[1].es : navLinks[1].en}{" "}
-              {/* Cambia dinámicamente según el idioma */}
-              <span className="text-[--verdementa]">/&gt;</span>
-            </p>
-            <h2>
-              {language === "ES"
-                ? "Mi Stack tecnológico y habilidades" // Texto en español
-                : "My TechStack and Skills"}
-            </h2>
-          </motion.div>
-        </div>
+        <div className="flex flex-col items-center gap-10 md:gap-16">
+          {/* Contenedor del título */}
+          {/* <div className="title-container flex flex-col justify-center items-center p-20 w-fit gap-6 min-[1921px]:px-[55rem] max-lg:p-0 max-lg:w-full max-lg:items-start max-lg:py-16"> */}
+            <motion.div
+              ref={animationReference} // Referencia para animaciones
+              style={{
+                scale: scaleProgess, // Escala animada
+                opacity: opacityProgess, // Opacidad animada
+              }}
+            >
+              {/* Título de la sección */}
+              <p className="font-black mb-6">
+                <span className="text-[--verdementa]">&lt;</span>
+                {language === "ES" ? navLinks[1].es : navLinks[1].en}{" "}
+                {/* Cambia dinámicamente según el idioma */}
+                <span className="text-[--verdementa]">/&gt;</span>
+              </p>
+              <h2>
+                {language === "ES"
+                  ? "Mi Stack tecnológico y habilidades" // Texto en español
+                  : "My TechStack and Skills"}
+              </h2>
+            </motion.div>
+          {/* </div> */}
 
-        {/* Contenedor de las secciones de habilidades */}
-        <div className="flex justify-center">
-          <div className="w-1/3 max-lg:w-full">
-            <SkillSection skillsData={skillsDataWeb} theme={theme} />
+          {/* Contenedor de las secciones de habilidades */}
+          <div className="flex justify-center">
+            <div className="w-1/3 max-lg:w-full">
+              <SkillSection skillsData={skillsDataWeb} theme={theme} />
+            </div>
           </div>
         </div>
       </section>
